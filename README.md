@@ -7,7 +7,7 @@ Desenvolvimento do Jogo T-300 K: Código Albedo com a turna FSC060806 - 2025.2
 **Nome do Projeto (Fase do Jogo):** `[Máquina de Entropia]`
 
 ### **Autores/Desenvolvedores:** 
-- Gabriel de Sousa Conforto `Coordenador, roteiro, história, trama e narrativa
+- Gabriel de Sousa Conforto `Coordenador, roteiro, história, trama e narrativa`
 - Marcos Vinícius Faustino `Progamação`
 - Ariel da Silva Coutinho `Arte, som e progamação`
 - Gabriel Corrêa Abreu de Oliveira `Arte, som, testador e relator de bugs`
@@ -127,15 +127,17 @@ Desenvolvimento do Jogo T-300 K: Código Albedo com a turna FSC060806 - 2025.2
 
 *(O que vai aparecer na tela quando o jogo começar? Descreva os elementos e suas funções.)*
 
-*   **Cenário:** Imagem de fundo, profundidade de tiles e objetos
+*   **Cenário:** Imagem de fundo, plataformas estáticas.
 *   **Jogador (Player):**
-    *   **Posição Inicial:**O jogador chega em um barco nas proximidades da fábrica.
-    *   **Física:** O jogador poderá colidir com os limites do mapa e de objetos, mas não há gravidade sendo aplicada no jogo.
+    *   **Posição Inicial:** Onde ele aparece?
+    *   **Física:** Terá gravidade? Vai colidir com os limites do mundo?
     *   **Animações:** `left` (andando para esquerda), `turn` (parado), `right` (andando para direita).
-*   **Coletáveis:** Itens disponíveis para pegar nas salas da fase, tendo documentos e itens com mecânicas próprias.
-*   **Inimigos (Opcional):** Inimigo Ariel Papa-Capim
-    *   **Comportamento:** Haverá um inimigo em uma das salas, que patrulha por um caminho predeterminado tendo um campo de visão, matando o jogador caso o veja.
-*   **Interface (UI):** Haverá uma barra de inventário.
+*   **Coletáveis (Moedas):**
+    *   **Comportamento:** Vão quicar? Ficarão paradas?
+    *   **Disposição:** Onde elas estarão no mapa?
+*   **Inimigos (Opcional):**
+    *   **Comportamento:** Patrulham uma área? Perseguem o jogador?
+*   **Interface (UI):** Placar de pontos, contador de vidas, etc.
 
 ---
 
@@ -144,20 +146,30 @@ Desenvolvimento do Jogo T-300 K: Código Albedo com a turna FSC060806 - 2025.2
 *(Inspirado em "Atualização do Jogo" e "Função de Coleta". Como o jogo reage e funciona a cada segundo?)*
 
 *   **Controles do Jogador (`update function`):**
-    *   **Esquerda:** Se a tecla de seta para a esquerda for pressionada, aplicar velocidade negativa em X de 150 e tocar a animação `left`.
-    *   **Direita:** Se a tecla de seta para a direita for pressionada, aplicar velocidade positiva em X de 150 e tocar a animação `right`.
+    *   **Esquerda:** Se a tecla de seta para a esquerda for pressionada, aplicar velocidade negativa em X e tocar a animação `left`.
+    *   **Direita:** Se a tecla de seta para a direita for pressionada, aplicar velocidade positiva em X e tocar a animação `right`.
+    *   **Pulo:** Se a tecla de seta para cima for pressionada e o jogador estiver no chão, aplicar velocidade em Y.
 *   **Interações e Colisões:**
-    *   **Jogador vs. limites:** O jogador deve colidir e não atravessar.
-    *   **Jogador vs. Moedas (`collectCoin function`):** Quando o jogador interagir com um item ou objeto, deverá pegá-lo
+    *   **Jogador vs. Plataformas:** O jogador deve colidir e não atravessar.
+    *   **Jogador vs. Moedas (`collectCoin function`):** Quando o jogador tocar numa moeda, a moeda desaparece, o placar aumenta em 10 pontos e um som é tocado.
+*   **Condições de Vitória/Derrota:**
+    *   **Vitória:** Coletar todas as moedas.
+    *   **Derrota:** Tocar em um inimigo ou cair para fora da tela.
+
 ---
 
 ### Checkpoint Final: Tesouro Encontrado! (Resultado Final)
 
-*(Qual é a aparência e a sensação do jogo finalizado, com base nos checkpoints acima?)*
+*   **Descrição da Experiência:** O jogador controla o personagem que explora uma antiga fábrica abandonada, coletando documentos que revelam a história desse mundo enquanto resolve puzzles baseados nos conteúdos da termodinâmica, avançando na fase para no fim completar a construção da maquina de entropia, que será necessária para avançar nos proximos niveis.
+    
+*   **Próximos Passos (Missões Futuras):**
 
-*   **Descrição da Experiência:** Descreva como é jogar a versão finalizada do seu projeto.
-    *   *Exemplo:* "O jogador controla o personagem em um cenário azul, pulando em plataformas marrons para coletar moedas douradas que giram. Ao coletar todas, uma mensagem de 'Você Venceu!' aparece na tela."
-*   **Próximos Passos (Missões Futuras):** O que você poderia adicionar depois?
-    *   *Exemplo:* "Adicionar inimigos, criar mais fases, implementar um sistema de vidas."
+       - Adição de um sistema de inventário;
 
+       - Criação de um sistema de Saúde para o persogem principal;
+
+       - Sistema de combate;
+ 
+       - 
+ 
 ---
